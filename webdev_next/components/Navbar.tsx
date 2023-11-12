@@ -33,7 +33,6 @@ const Navbar = (): JSX.Element => {
       </div>
       <div className={styles.links}>
         {navigation.map((url) => <Link className={pathname === url.path ? styles.active : ''} href={url.path} key={url.id}>{url.title}</Link>)}
-        <Link href="/contacts/contact">Dave</Link>
       </div>
     </nav>
   );
