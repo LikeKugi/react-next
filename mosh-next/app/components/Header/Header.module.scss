@@ -1,0 +1,12 @@
+.header {
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &__link {
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: rgb(var(--foreground-hover));
+    }
+  }
+}
