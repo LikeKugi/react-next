@@ -1,0 +1,29 @@
+.header {
+  padding-block: 1rem;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin-block: 0;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    display: inline-block;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+    transition: color 0.4s ease-in-out;
+    text-decoration: none;
+    border-block-end: 3px solid transparent;
+
+    &:hover {
+      color: turquoise;
+    }
+  }
+}
+
+.active {
+  border-block-end-color: turquoise;
+}
