@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}

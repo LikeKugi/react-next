@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import image from '@/public/404.png'
-import Meta from '@/components/Meta/Meta';
+import Meta from '@/components/layouts/Meta/Meta';
 
 const NotFound = (): JSX.Element => {
   const { replace } = useRouter();

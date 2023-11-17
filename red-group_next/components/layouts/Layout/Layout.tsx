@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren } from 'react';
-import Header from '@/components/Header/Header';
+import Header from '@/components/layouts/Header/Header';
 import styles from './Layout.module.scss'
 import dynamic from 'next/dynamic';
 
-const DynamicFooter = dynamic(() => import('@/components/Footer'), {ssr: false})
+const DynamicFooter = dynamic(() => import('@/components/layouts/Footer/Footer'), {ssr: false})
 
 const Layout: FC<PropsWithChildren<unknown>> = ({children}) => {
   return (

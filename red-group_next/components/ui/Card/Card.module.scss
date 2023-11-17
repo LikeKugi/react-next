@@ -1,0 +1,14 @@
+.card {
+  max-width: 320px;
+  padding-block: 1rem;
+  padding-inline: 0.5rem;
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-inline-end: 1rem;
+  }
+}
