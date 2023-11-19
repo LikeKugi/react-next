@@ -1,0 +1,38 @@
+.header {
+  margin: 0;
+  padding-inline: 0;
+  padding-block: 0.5rem;
+
+  &__nav {
+    max-width: max-content;
+    margin-block: 0;
+    margin-inline: auto;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__item  {
+    list-style-type: none;
+  }
+
+  &__link {
+    display: inline-block;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      border-block-end-color: crimson;
+    }
+  }
+}
+
+.active {
+  border-block-end-color: seagreen;
+}
