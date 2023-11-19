@@ -45,6 +45,7 @@ const SinglePostPage: FC<ISinglePostProps> = ({post}) => {
         <h1>{post.title}</h1>
         <p>{post.text}</p>
         <p>Post #{post.id}</p>
+        <p><Link href={`/posts/${post.id}/edit`}>Edit</Link></p>
         <p><Link href={'/posts'}>Back</Link></p>
       </div>
     </>

@@ -32,6 +32,7 @@ const PostsPage: FC<IPostPageProps> = ({posts}): JSX.Element => {
       <Meta title="Posts Page" />
       <main>
         <h1>Posts page</h1>
+        <p><Link href={'/posts/add'}>Add new post</Link></p>
         <ul>
           {posts.map((post) => (<li key={post.id}>
             <Link href={`/posts/${post.id}`}>Post {post.title}</Link>
