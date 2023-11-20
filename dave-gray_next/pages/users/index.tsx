@@ -3,6 +3,7 @@ import { IUser } from '@/types';
 import { GetServerSideProps } from 'next';
 import { fetchUsers } from '@/services/fetchUsers';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 interface IUsersPageProps {
   users: IUser[];
@@ -14,7 +15,7 @@ const UsersPage: FC<IUsersPageProps> = ({ users }) => {
 
   return (
     <div>
-      {users.map(user => <p key={user.id}>{user.name}</p>)}
+      {users.map(user => <p key={user.id}><Link href={`/users/${user.id}`}>{user.name}</Link></p>)}
     </div>
   );
 };
