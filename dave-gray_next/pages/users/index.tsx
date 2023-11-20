@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { IUser } from '@/types';
 import { GetServerSideProps } from 'next';
 import { fetchUsers } from '@/services/fetchUsers';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 interface IUsersPageProps {
@@ -10,8 +9,6 @@ interface IUsersPageProps {
 }
 
 const UsersPage: FC<IUsersPageProps> = ({ users }) => {
-
-  const router = useRouter();
 
   return (
     <div>

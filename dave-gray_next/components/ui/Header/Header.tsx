@@ -16,7 +16,7 @@ const makeClasses = (currentPath: string, linkPath: string) => {
 
 const Header = (): JSX.Element => {
 
-  const { pathname, asPath } = useRouter();
+  const { pathname, asPath, query } = useRouter();
 
   return (
     <header className={`${styles.header} ${font.className}`}>
@@ -24,10 +24,10 @@ const Header = (): JSX.Element => {
         <ul className={styles.header__list}>
           {routes.map(route => <li className={styles.header__list}
                                    key={route.path}><Link className={makeClasses(pathname, route.path)}
-                                                          href={route.path} >{route.description}</Link></li>)}
+                                                          href={{ pathname: route.path, query }} >{route.description}</Link></li>)}
 
           <li className={makeClasses(`/users?q=bar`, asPath)}>
-            <Link href={{pathname: '/users', query: { q: 'bar' }}}>Users with query link</Link>
+            <Link href={{pathname: '/users', query: {...query}}}>Users with query link</Link>
           </li>
         </ul>
 
