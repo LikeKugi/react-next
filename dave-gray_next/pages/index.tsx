@@ -19,7 +19,7 @@ export default function Home({ data }: { data: string }) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-  const userId = context.query.user || 1;
+  const userId = context.query.id || 1;
 
   const result = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
   const data: IUser = await result.json();
