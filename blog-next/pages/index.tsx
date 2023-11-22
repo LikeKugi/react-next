@@ -1,7 +1,9 @@
+import Wrapper from '@/components/ui/Wrapper/Wrapper';
+
 export default function Home() {
   return (
-    <div>
+    <Wrapper>
       main page
-    </div>
+    </Wrapper>
   )
 }

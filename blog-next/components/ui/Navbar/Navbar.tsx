@@ -18,9 +18,11 @@ const Navbar = (): JSX.Element => {
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__wrapper}>
-        {routes.map(route => <Link className={makeLinkClassName(route.path, pathname)}
-                                   key={route.path}
-                                   href={route.path}>{route.description}</Link>)}
+        <div>
+          {routes.map(route => <Link className={makeLinkClassName(route.path, pathname)}
+                                     key={route.path}
+                                     href={route.path}>{route.description}</Link>)}
+        </div>
       </div>
     </nav>
   );
