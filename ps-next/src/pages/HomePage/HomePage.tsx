@@ -3,9 +3,17 @@ import Heading from '@/components/Heading/Heading';
 import Button from '@/components/Button/Button';
 import Paragraph from '@/components/Paragraph/Paragraph';
 import Tag from '@/components/Tag/Tag';
+import Rating from '@/components/Rating/Rating';
 
 const HomePage = (): JSX.Element => {
   const [direction, setDirection] = useState<'right' | 'down'>('right');
+
+  const [rating, setRating] = useState(1);
+
+  const onRatingChange = (value: number) => {
+    setRating(value);
+  }
+
   return (
     <>
       <Button variant="ghost">button</Button>
@@ -31,6 +39,8 @@ const HomePage = (): JSX.Element => {
       <Tag color="green" size="sm">foo</Tag>
       <Tag color="green" href="/" size="sm">foo</Tag>
       <Tag color="gray" href="/" size="md">foo</Tag>
+
+      <Rating rating={rating} setRating={onRatingChange} isEditable={true} />
     </>
   );
 };

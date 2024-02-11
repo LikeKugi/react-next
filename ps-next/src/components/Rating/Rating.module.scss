@@ -1,0 +1,12 @@
+.Rating {
+  color: var(--color-gray-100);
+
+}
+
+.star {
+
+  &--filled {
+    color: var(--color-main);
+  }
+}
+
