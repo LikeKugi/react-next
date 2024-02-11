@@ -1,0 +1,18 @@
+.Paragraph {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
+
+  &--sm {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &--md {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &--lg {
+    font-size: 18px;
+    line-height: 29px;
+  }
+}
