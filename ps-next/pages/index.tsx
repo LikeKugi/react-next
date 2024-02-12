@@ -1,10 +1,13 @@
 import HomePage from '@/pages/HomePage/HomePage';
+import withLayout from '@/HOC/withLayout';
 
 
-export default function Home() {
+function Home() {
   return (
     <>
-      <HomePage />
+      <HomePage/>
     </>
   );
 }
+
+export default withLayout(Home);

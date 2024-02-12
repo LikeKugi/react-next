@@ -23,6 +23,7 @@ const Rating: FC<IRatingProps> = ({ className, isEditable = false, setRating=() 
       {Array.from({ length: 5 }, (_, idx) => (
         <svg key={idx}
              data-rating={idx + 1}
+             tabIndex={isEditable ? 0 : undefined}
              className={clsx(styles.star, rating > idx && styles['star--filled'])}
              width="20.000000"
              height="20.000000"
