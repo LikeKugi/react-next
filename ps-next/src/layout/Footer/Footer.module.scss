@@ -1,0 +1,27 @@
+@mixin _768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.Footer {
+  padding: 25px 30px;
+  display: grid;
+  gap: 10px 40px;
+  grid-template-columns: 1fr auto auto;
+  font-size: 16px;
+  line-height: 105%;
+  background-color: var(--color-main);
+  color: var(--color-white-50);
+
+  @include _768 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  &__link {
+    &:hover {
+      color: var(--color-gray-200);
+    }
+  }
+}
