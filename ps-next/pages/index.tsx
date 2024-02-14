@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next';
 import { IHomePageProps } from '@/pages/HomePage/HomePage.types';
 import axios from 'axios';
 import { IMenuItem } from '@/types';
+import { API_PATH } from '@/constants';
 
 
 function Home({menu, firstCategory}: IHomePageProps) {
@@ -16,7 +17,7 @@ function Home({menu, firstCategory}: IHomePageProps) {
 
 export const getStaticProps: GetStaticProps<IHomePageProps> = async () => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<IMenuItem[]>( process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+  const { data: menu } = await axios.post<IMenuItem[]>( API_PATH.FIND.path, {
     firstCategory,
   });
   return {
