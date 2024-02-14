@@ -1,11 +1,13 @@
-import { JSX, useState } from 'react';
+import { FC, JSX, useState } from 'react';
 import Heading from '@/components/Heading/Heading';
 import Button from '@/components/Button/Button';
 import Paragraph from '@/components/Paragraph/Paragraph';
 import Tag from '@/components/Tag/Tag';
 import Rating from '@/components/Rating/Rating';
+import { IHomePageProps } from '@/pages/HomePage/HomePage.types';
+import Link from 'next/link';
 
-const HomePage = (): JSX.Element => {
+const HomePage: FC<IHomePageProps> = ({menu, firstCategory}): JSX.Element => {
   const [direction, setDirection] = useState<'right' | 'down'>('right');
 
   const [rating, setRating] = useState(1);
@@ -41,6 +43,11 @@ const HomePage = (): JSX.Element => {
       <Tag color="gray" href="/" size="md">foo</Tag>
 
       <Rating rating={rating} setRating={onRatingChange} isEditable={true} />
+      <ul>
+        {menu && menu.map(m => (<li key={m._id.secondCategory}>
+          <Link href={`/courses/${m._id.secondCategory}`}>{m._id.secondCategory}</Link>
+        </li>))}
+      </ul>
     </>
   );
 };
