@@ -1,0 +1,17 @@
+<svg width="24.000000" height="22.498230" viewBox="0 0 24 22.4982" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_285">
+			<rect width="24.000000" height="22.498230" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect width="24.000000" height="22.498230" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1_285)">
+		<path d="M15.09 4.16815L6.92175 8.08844L3.67499 6.59088L11.6992 2.87659C11.8792 2.79083 12.0952 2.79083 12.2842 2.87659L15.09 4.16815Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path d="M20.316 6.59094L12.0045 10.4508L8.89203 9.013L8.44202 8.79858L16.6193 4.87897L17.0693 5.09271L20.316 6.59094Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path d="M11.3385 11.563L11.3295 19.6856L3.36902 15.7913C3.14398 15.6802 3 15.4573 3 15.2176L3 7.70319L6.37347 9.26117L6.37347 12.0004C6.37347 12.3512 6.6795 12.6423 7.04852 12.6423C7.41748 12.6423 7.72351 12.3512 7.72351 12.0004L7.72351 9.89465L8.17352 10.1L11.3385 11.563Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path d="M20.991 7.71161L12.6885 11.5546L12.6795 19.6771L21 15.6042L20.991 7.71161Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

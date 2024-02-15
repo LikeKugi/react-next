@@ -43,11 +43,6 @@ const HomePage: FC<IHomePageProps> = ({menu, firstCategory}): JSX.Element => {
       <Tag color="gray" href="/" size="md">foo</Tag>
 
       <Rating rating={rating} setRating={onRatingChange} isEditable={true} />
-      <ul>
-        {menu && menu.map(m => (<li key={m._id.secondCategory}>
-          <Link href={`/courses/${m._id.secondCategory}`}>{m._id.secondCategory}</Link>
-        </li>))}
-      </ul>
     </>
   );
 };
