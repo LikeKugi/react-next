@@ -5,7 +5,6 @@ import Paragraph from '@/components/Paragraph/Paragraph';
 import Tag from '@/components/Tag/Tag';
 import Rating from '@/components/Rating/Rating';
 import { IHomePageProps } from '@/pages/HomePage/HomePage.types';
-import Link from 'next/link';
 
 const HomePage: FC<IHomePageProps> = ({menu, firstCategory}): JSX.Element => {
   const [direction, setDirection] = useState<'right' | 'down'>('right');

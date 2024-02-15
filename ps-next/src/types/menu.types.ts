@@ -1,3 +1,6 @@
+import { ITopLevelCategory } from '@/types/page.types';
+import { ReactNode } from 'react';
+
 export interface IPageItem {
   alias: string;
   title: string;
@@ -10,4 +13,11 @@ export interface IMenuItem {
   };
   pages: IPageItem[];
   isOpened?: boolean;
+}
+
+export interface IFirstLevelMenuItem {
+  route: string;
+  name: string;
+  icon: ReactNode;
+  id: ITopLevelCategory;
 }
