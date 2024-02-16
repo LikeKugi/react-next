@@ -1,0 +1,20 @@
+.MenuFirstLevel {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+  align-items: center;
+
+  margin-top: 20px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+
+  &:hover {
+    color: var(--color-main);
+  }
+
+  &--active {
+    color: var(--color-main);
+  }
+}

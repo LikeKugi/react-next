@@ -1,0 +1,26 @@
+.MenuSecondLevel {
+  margin-top: 15px;
+  margin-left: 12px;
+  padding-left: 32px;
+
+  border-left: 1px solid var(--color-gray-200);
+
+  &__item {
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color-gray-800);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+  }
+
+  &__submenu {
+
+    &--open {
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
