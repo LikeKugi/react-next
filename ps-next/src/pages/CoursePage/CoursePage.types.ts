@@ -1,8 +1,8 @@
-import { IMenuItem, IObject, IPageModel, IProductModel } from '@/types';
+import { IMenuItem, IObject, IPageModel, IProductModel, ITopLevelCategory } from '@/types';
 
 export interface ICoursePageProps extends IObject {
   menu: IMenuItem[];
-  firstCategory: number;
+  firstCategory: ITopLevelCategory;
   page: IPageModel;
   products: IProductModel[];
 }
