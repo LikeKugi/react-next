@@ -5,4 +5,5 @@ export interface IMenuFirstLevelProps extends Omit<DetailedHTMLProps<HTMLAttribu
   firstLevelMenu: IFirstLevelMenuItem[];
   firstCategory: ITopLevelCategory;
   menu: IMenuItem[];
+  openSecondLevelMenu: (arg: string) => void;
 }

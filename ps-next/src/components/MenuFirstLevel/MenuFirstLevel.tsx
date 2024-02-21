@@ -10,6 +10,7 @@ const MenuFirstLevel: FC<IMenuFirstLevelProps> = ({
                                                     firstCategory,
                                                     menu: outerMenu,
                                                     className,
+                                                    openSecondLevelMenu,
                                                     ...other
                                                   }): JSX.Element => {
   return (
@@ -17,10 +18,14 @@ const MenuFirstLevel: FC<IMenuFirstLevelProps> = ({
       {firstLevelMenu.map(menu => (
         <div key={menu.id}>
           <Link href={`/${menu.route}`}>
-            <div className={clsx(className, styles.MenuFirstLevel, menu.id === firstCategory && styles['MenuFirstLevel--active'])} {...other}>{menu.icon}<span>{menu.name}</span>
+            <div className={clsx(className,
+              styles.MenuFirstLevel,
+              menu.id === firstCategory && styles['MenuFirstLevel--active'])} {...other}>{menu.icon}<span>{menu.name}</span>
             </div>
           </Link>
-          {menu.id === firstCategory && <MenuSecondLevel menu={outerMenu} route={menu.route} />}
+          {menu.id === firstCategory && <MenuSecondLevel menu={outerMenu}
+                                                         route={menu.route}
+                                                         openSecondLevelMenu={openSecondLevelMenu}/>}
         </div>
       ))}
     </>
