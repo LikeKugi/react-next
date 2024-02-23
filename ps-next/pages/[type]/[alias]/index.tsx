@@ -1,18 +1,18 @@
 import { JSX } from 'react';
 import withLayout from '@/HOC/withLayout';
-import CoursePage from '@/pages/CoursePage/CoursePage';
+import TopPage from '@/pages/TopPage/TopPage';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from 'axios';
 import { IMenuItem, IPageModel, IProductModel } from '@/types';
-import { ICoursePageProps } from '@/pages/CoursePage/CoursePage.types';
+import { ITopPageProps } from '@/pages/TopPage/TopPage.types';
 import { API_PATH } from '@/constants';
 import { ParsedUrlQuery } from 'querystring';
 import { firstLevelMenu } from '@/utils/firstLevelMenu';
 
-const Course = ({menu, firstCategory, page, products}: ICoursePageProps): JSX.Element => {
+const Top = ({menu, firstCategory, page, products}: ITopPageProps): JSX.Element => {
   return (
     <>
-      <CoursePage menu={menu} firstCategory={firstCategory} page={page} products={products} />
+      <TopPage menu={menu} firstCategory={firstCategory} page={page} products={products} />
     </>
   );
 };
@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<ICoursePageProps> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<ITopPageProps> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
     return {
       notFound: true,
@@ -74,4 +74,4 @@ export const getStaticProps: GetStaticProps<ICoursePageProps> = async ({params}:
   }
 
 }
-export default withLayout(Course);
+export default withLayout(Top);
