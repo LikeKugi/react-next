@@ -5,6 +5,9 @@ import { Gantt, Task, ViewMode } from 'gantt-task-react';
 import { getStartEndDateForProject, initTasks } from '@/shared/helpers/tasks';
 import { GanttColumnWidth } from '@/shared/helpers';
 import 'gantt-task-react/dist/index.css';
+import { TaskListTable } from '@/entities/TaskListTable/TaskListTable';
+
+import './GanttPage.scss'
 
 const GanttPage = (): JSX.Element => {
   const [view, setView] = useState<ViewMode>(ViewMode.Day);
@@ -58,6 +61,22 @@ const GanttPage = (): JSX.Element => {
     console.log('On expander click Id:' + task.id);
   };
 
+  const handleAddTask = (task: Task) => {
+    console.log(task);
+    const currentDate = new Date();
+
+    const newTasks: Task = {
+      name: "new task",
+      type: "task",
+      progress: 100,
+      id: new Date().getMilliseconds().toString(),
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4, 0, 0),
+      project: task.id
+    };
+    setTasks((e) => [...e, newTasks]);
+  };
+
   return (
     <>
       <Gantt tasks={tasks}
@@ -67,7 +86,30 @@ const GanttPage = (): JSX.Element => {
              onDoubleClick={handleDblClick}
              onSelect={handleSelect}
              onExpanderClick={handleExpanderClick}
-             columnWidth={columnWidth}/>
+             columnWidth={columnWidth}
+
+             TaskListHeader={({ headerHeight }) => (
+               <div
+                 style={{
+                   height: headerHeight,
+                   fontFamily: "sans-serif",
+                   fontWeight: "bold",
+                   paddingLeft: 10,
+                   margin: 0,
+                   marginBottom: -1,
+                   display: "flex",
+                   alignItems: "center"
+                 }}
+               >
+                 Jobs
+               </div>
+             )}
+             TaskListTable={(props) => <TaskListTable {...props} handleAddTask={handleAddTask} />}
+             barCornerRadius={8}
+             barFill={80}
+             todayColor="var(--color-today)"
+             projectBackgroundColor="var(--color-white)"
+      locale="ru-RU"/>
     </>
   );
 };

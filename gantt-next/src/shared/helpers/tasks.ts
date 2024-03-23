@@ -1,17 +1,22 @@
 import { Task } from "gantt-task-react";
+import { createGanttTasksFromKanban } from '@/shared/utils/createGanttTasksFromKanban';
+import { kanbanTasks } from '@/shared/mocks/kanbanTasks';
 
 export const initTasks = () => {
+  return createGanttTasksFromKanban(kanbanTasks);
+
+
   const currentDate = new Date();
   const tasks: Task[] = [
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
       end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
-      name: "Some Project",
+      name: "GANTT Epic Project",
       id: "ProjectSample",
       progress: 25,
       type: "project",
 
-      hideChildren: false
+      hideChildren: false,
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
@@ -26,7 +31,7 @@ export const initTasks = () => {
       id: "Task 0",
       progress: 120,
       type: "task",
-      project: "ProjectSample"
+      project: "ProjectSample",
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
@@ -46,7 +51,11 @@ export const initTasks = () => {
       progress: 10,
       dependencies: ["Task 1"],
       type: "task",
-      project: "ProjectSample"
+      project: "ProjectSample",
+      styles: {
+        progressColor: '#fed400',
+        backgroundColor: '#fd00da'
+      }
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
@@ -71,12 +80,12 @@ export const initTasks = () => {
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
       end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
-      name: "Release",
+      name: "Test task",
       id: "Task 6",
       progress: currentDate.getMonth(),
       type: "milestone",
       dependencies: ["Task 4"],
-      project: "ProjectSample"
+      project: "ProjectSample",
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 18),
