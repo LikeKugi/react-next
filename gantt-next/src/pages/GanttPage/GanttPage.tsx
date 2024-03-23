@@ -8,6 +8,7 @@ import 'gantt-task-react/dist/index.css';
 import { TaskListTable } from '@/entities/TaskListTable/TaskListTable';
 
 import './GanttPage.scss'
+import { IGanttTask } from '@/shared/types';
 
 const GanttPage = (): JSX.Element => {
   const [view, setView] = useState<ViewMode>(ViewMode.Day);
@@ -104,7 +105,7 @@ const GanttPage = (): JSX.Element => {
                  Jobs
                </div>
              )}
-             TaskListTable={(props) => <TaskListTable {...props} handleAddTask={handleAddTask} />}
+             TaskListTable={({tasks, ...other}) => <TaskListTable tasks={tasks as IGanttTask[]} {...other} handleAddTask={handleAddTask} />}
              barCornerRadius={8}
              barFill={80}
              todayColor="var(--color-today)"
