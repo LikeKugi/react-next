@@ -50,8 +50,7 @@ const TaskListTable: FC<TaskListTableProps> = ({
                 margin: 0
               }}
             >
-              {isProject ? "> " : ""}
-              {item.taskType}
+              {isProject ? `> ${item.name}` : item.taskType}
             </p>
             {isProject && (
               <div

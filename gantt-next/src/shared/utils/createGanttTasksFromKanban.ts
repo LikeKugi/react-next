@@ -16,4 +16,4 @@ export const createGanttTasksFromKanban = (tasks: IKanbanTask[]): IGanttTask[] =
     taskType: task.type,
     styles: createGanttTaskColor(task.type)
   }))
-)
+);

@@ -81,9 +81,9 @@ const GanttPage = (): JSX.Element => {
   return (
     <>
       <Gantt tasks={tasks}
-             onDateChange={handleTaskChange}
-             onDelete={handleTaskDelete}
-             onProgressChange={handleProgressChange}
+             // onDateChange={handleTaskChange}
+             // onDelete={handleTaskDelete}
+             // onProgressChange={handleProgressChange}
              onDoubleClick={handleDblClick}
              onSelect={handleSelect}
              onExpanderClick={handleExpanderClick}
@@ -105,7 +105,13 @@ const GanttPage = (): JSX.Element => {
                  Jobs
                </div>
              )}
-             TaskListTable={({tasks, ...other}) => <TaskListTable tasks={tasks as IGanttTask[]} {...other} handleAddTask={handleAddTask} />}
+             TaskListTable={({tasks, ...other}) => <TaskListTable tasks={tasks as IGanttTask[]} {...other} rowWidth="362px" handleAddTask={handleAddTask} />}
+             TooltipContent={({task, ...other}) => (
+               <div {...other}>
+                 <p>{task.name}</p>
+                 <p>{(task as IGanttTask).taskType}</p>
+               </div>
+             )}
              barCornerRadius={8}
              barFill={80}
              todayColor="var(--color-today)"
